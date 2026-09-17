@@ -19,10 +19,14 @@ pipeline {
 
         stage('Send Notification') {
             steps {
-                mail to: 'student@example.com',
-                     cc: 'instructor@example.com',
+                mail to: 'ratakondadimpul2628@gmail.com, ratakonda.dimpul2024@vitstudent.ac.in',
                      subject: "Build Notification: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                     body: "The build for ${env.JOB_NAME} has completed.\n\nCheck it here: ${env.BUILD_URL}"
+                     body: """The Jenkins build has completed successfully.
+
+Job: ${env.JOB_NAME}
+Build Number: ${env.BUILD_NUMBER}
+Build URL: ${env.BUILD_URL}
+"""
             }
         }
     }
